@@ -18,6 +18,7 @@ with open('Список рецептов.txt', 'r', encoding='utf-8') as f:
     #     #     print(ingredients_dict)
     #     # print(cook_book[dishes])
     # pprint (cook_book)
+
     for line in f:
         dish_name = line.strip()
         counter = f.readline().strip()
