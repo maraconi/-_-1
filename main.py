@@ -1,6 +1,5 @@
 cook_book = {}
 
-
 with open('Список рецептов.txt', 'r', encoding='utf-8') as f:
     # while True:
     #     dishes = f.readline().strip()
