@@ -18,17 +18,14 @@ with open('Список рецептов.txt', 'r', encoding='utf-8') as f:
     #     #     print(ingredients_dict)
     #     # print(cook_book[dishes])
     # pprint (cook_book)
-
     for line in f:
         dish_name = line.strip()
         counter = f.readline().strip()
         list_of_ingredient = []
         for i in range(int(counter)):
             ingredient = f.readline().strip().split(" | ")
-            ingredients_dict = {"ingredient_name": ingredient[0], "quantity": ingredient[1],
-                                "measure": ingredient[2]}
-            list_of_ingredient.append(ingredients_dict)
-            cook_book[dish_name] = {dish_name: list_of_ingredient}
-            cook_book.update(cook_book[dish_name])
+            ingredients_dict = {"ingredient_name": ingredient[0], "quantity": ingredient[1], "measure": ingredient[2],}
+            list_of_ingredient += [ingredients_dict]
+        cook_book[dish_name] = list_of_ingredient
         f.readline().strip()
-    pprint(cook_book)
+pprint(cook_book)
