@@ -1,3 +1,5 @@
+from pprint import pprint
+
 cook_book = {}
 
 with open('Список рецептов.txt', 'r', encoding='utf-8') as f:
@@ -13,9 +15,9 @@ with open('Список рецептов.txt', 'r', encoding='utf-8') as f:
     #         ingredients_dict = {"ingredient_name": ingredient[0], "quantity": int(ingredient[1]), "measure": ingredient[2]}
     #         cook_book[dishes].append(ingredients_dict)
     #         line = f.readline().strip()
-    #         print(ingredients_dict)
-    # #     print(cook_book[dishes])
-    # #     print (cook_book)
+    #     #     print(ingredients_dict)
+    #     # print(cook_book[dishes])
+    # pprint (cook_book)
 
     for line in f:
         dish_name = line.strip()
@@ -29,6 +31,4 @@ with open('Список рецептов.txt', 'r', encoding='utf-8') as f:
             cook_book[dish_name] = {dish_name: list_of_ingredient}
             cook_book.update(cook_book[dish_name])
         f.readline().strip()
-print(cook_book)
-
-
+    pprint(cook_book)
